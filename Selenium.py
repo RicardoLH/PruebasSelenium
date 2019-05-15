@@ -19,22 +19,21 @@ driver.find_element_by_css_selector("input[ng-model='password']").send_keys(pass
 driver.find_element_by_css_selector("button[type='submit']").click()
 
 # Clicking "Nueva Cotizacion"
-WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a[href='#/quotes/new']"))).click()
-WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "js-last-picked-label"))).click()
+WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a[href='#/quotes/new']"))).click()
+WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.ID, "js-last-picked-label"))).click()
 
-
-
-
-WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "2020"))).click()
-WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "KIA"))).click()
-WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "SOUL"))).click()
-WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.LINK_TEXT, "SOUL EX 4 CIL MPI AUT 4 ABS CLIMA VIDRIOELEC TELA SM SIN QUEMACOCOS BOLSAAIRE"))).click()
+WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.LINK_TEXT, "2020"))).click()
+WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.LINK_TEXT, "KIA"))).click()
+WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.LINK_TEXT, "SOUL"))).click()
+WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.LINK_TEXT, "SOUL EX 4 CIL MPI AUT 4 ABS CLIMA VIDRIOELEC TELA SM SIN QUEMACOCOS BOLSAAIRE"))).click()
 
 # There are 3 different inputs for the postal code. The one which works for SEGUVIN is the number 2
 driver.find_elements_by_css_selector("input[data-ng-model='cp']")[2].send_keys("01430")
 #WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[data-ng-model='cp']"))).send_keys("01430")
 time.sleep(2)
-driver.find_element_by_link_text("Mostrar oferta").click()
+#driver.find_element_by_link_text("Mostrar oferta").click()
+
+WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.LINK_TEXT, "Mostrar oferta"))).click()
 
 WebDriverWait(driver, 100).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "body .row.mb10:nth-child(2) a[ng-click='printDeals()']"))).click()
 
